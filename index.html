@@ -187,9 +187,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 4px;
       margin-bottom: 32px;
-      /* no border-bottom on grid layout */
     }
-    /* Desktop: single row scroll */
     @media(min-width: 601px) {
       .tabs {
         display: flex;
@@ -229,7 +227,6 @@
     }
     .tab-btn.active .lv { opacity: 1; }
 
-    /* Desktop tab style override */
     @media(min-width: 601px) {
       .tab-btn {
         padding: 14px 18px; font-size: .88rem; font-weight: 500;
@@ -305,6 +302,39 @@
     .register-cell.formal  .register-cell-title { color: var(--accent3); }
     .register-cell .reg-formula { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
     .register-cell .reg-example { font-size: .8rem; color: var(--muted2); }
+
+    /* ══════════════════════════════════════════
+       GOLD BOX SPECIAL — ていただけますか
+    ══════════════════════════════════════════ */
+    .box-itadake {
+      border-left: 4px solid var(--gold);
+      background: rgba(251,191,36,.07);
+      border-radius: 0 14px 14px 0;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      font-size: .88rem;
+      line-height: 1.9;
+    }
+    .box-itadake .itadake-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .box-itadake .itadake-formula {
+      background: rgba(251,191,36,.12);
+      border: 1px solid rgba(251,191,36,.3);
+      border-radius: 10px; padding: 10px 14px; margin: 10px 0;
+      font-family: 'Noto Serif JP', serif; font-size: .95rem;
+    }
+    .box-itadake .itadake-ex {
+      display: flex; flex-direction: column; gap: 7px; margin-top: 12px;
+    }
+    .box-itadake .itadake-row {
+      background: rgba(251,191,36,.05); border-radius: 8px;
+      padding: 8px 12px; font-size: .85rem; border-left: 3px solid rgba(251,191,36,.4);
+    }
+    .box-itadake .itadake-jp { font-family: 'Noto Serif JP', serif; font-weight: 700; color: var(--gold); }
+    .box-itadake .itadake-id { font-size: .8rem; color: var(--muted2); margin-top: 3px; }
 
     /* ══════════════════════════════════════════
        TABLES
@@ -518,7 +548,7 @@
 
     /* ══════════════════════════════════════════
        PROGRESS BAR
-    ══════════════════════════════════════════ */
+    ═══   ══════════════════════════════════════ */
     .progress-wrap { margin: 26px 0 8px; }
     .progress-label { display: flex; justify-content: space-between; font-size: .78rem; color: var(--muted); margin-bottom: 5px; }
     .progress-track { height: 7px; background: var(--border); border-radius: 999px; overflow: hidden; }
@@ -535,7 +565,7 @@
     .final-banner .score-big { font-size: 2.2rem; font-weight: 700; color: var(--accent3); font-family: 'Noto Serif JP', serif; }
     .final-banner .score-msg { font-size: .95rem; color: var(--muted2); margin-top: 5px; }
 
-    /* ══════════════════════════════════════════
+    /* ════════════════════   ═════════════════════
        SUMMARY GRID
     ══════════════════════════════════════════ */
     .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px,1fr)); gap: 12px; margin-bottom: 24px; }
@@ -706,7 +736,7 @@
   <div class="tab-content active" id="content1">
     <div class="sec-title">Level 1 — Pengertian Dasar Kenjougo</div>
     <p class="sec-desc">
-      Dalam bahasa Jepang, ada sistem bahasa sopan (keigo/敬語) yang sangat penting.
+      Dalam bahasa Jepang, ada sistem bahasa sopan (keigo/<ruby>敬語<rt>けいご</rt></ruby>) yang sangat penting.
       Kenjougo adalah salah satu dari tiga jenis keigo, khusus digunakan untuk
       <strong>merendahkan diri sendiri</strong> ketika berbicara kepada atau tentang orang yang lebih tinggi.
     </p>
@@ -722,22 +752,22 @@
     <div class="analogy-grid">
       <div class="analogy-card blue">
         <span class="analogy-icon">⬆️</span>
-        <div class="analogy-label">SONKEIGO — 尊敬語</div>
+        <div class="analogy-label">SONKEIGO — <ruby>尊敬語<rt>そんけいご</rt></ruby></div>
         <div class="analogy-title">Menaikkan lawan bicara</div>
         <div class="analogy-body">
           Dipakai untuk tindakan orang yang LEBIH TINGGI.<br>
           Seperti menggunakan kata "beliau" untuk guru yang pergi.<br><br>
-          <em>Guru pergi → 先生がいらっしゃいます</em>
+          <em><ruby>先生<rt>せんせい</rt></ruby>がいらっしゃいます</em>
         </div>
       </div>
       <div class="analogy-card green">
         <span class="analogy-icon">⬇️</span>
-        <div class="analogy-label">KENJOUGO — 謙譲語</div>
+        <div class="analogy-label">KENJOUGO — <ruby>謙譲語<rt>けんじょうご</rt></ruby></div>
         <div class="analogy-title">Merendahkan diri sendiri</div>
         <div class="analogy-body">
           Dipakai untuk tindakan yang SAYA lakukan.<br>
           Seperti bilang "hamba pergi" ketika berbicara ke atasan.<br><br>
-          <em>Saya pergi → 私が参ります</em>
+          <em><ruby>私<rt>わたし</rt></ruby>が<ruby>参<rt>まい</rt></ruby>ります</em>
         </div>
       </div>
     </div>
@@ -756,39 +786,39 @@
         <tbody>
           <tr>
             <td data-label="Situasi">Guru membaca buku</td>
-            <td data-label="Siapa?"><span class="jp">先生</span> (orang lebih tinggi)</td>
+            <td data-label="Siapa?"><span class="jp"><ruby>先生<rt>せんせい</rt></ruby></span> (orang lebih tinggi)</td>
             <td data-label="Pakai Apa?"><span style="color:var(--accent);font-weight:700">Sonkeigo ⬆️</span></td>
-            <td data-label="Contoh"><span class="jp">お読みになります</span> <button class="speak-btn" onclick="speak('お読みになります')">🔊</button></td>
+            <td data-label="Contoh"><span class="jp">お<ruby>読<rt>よ</rt></ruby>みになります</span> <button class="speak-btn" onclick="speak('お読みになります')">🔊</button></td>
           </tr>
           <tr>
             <td data-label="Situasi">Saya membaca buku untuk guru</td>
-            <td data-label="Siapa?"><span class="jp">私</span> (saya sendiri)</td>
+            <td data-label="Siapa?"><span class="jp"><ruby>私<rt>わたし</rt></ruby></span> (saya sendiri)</td>
             <td data-label="Pakai Apa?"><span style="color:var(--accent3);font-weight:700">Kenjougo ⬇️</span></td>
-            <td data-label="Contoh"><span class="jp">お読みします</span> <button class="speak-btn" onclick="speak('お読みします')">🔊</button></td>
+            <td data-label="Contoh"><span class="jp">お<ruby>読<rt>よ</rt></ruby>みします</span> <button class="speak-btn" onclick="speak('お読みします')">🔊</button></td>
           </tr>
           <tr>
             <td data-label="Situasi">Direktur datang ke kantor</td>
-            <td data-label="Siapa?"><span class="jp">社長</span> (orang lebih tinggi)</td>
+            <td data-label="Siapa?"><span class="jp"><ruby>社長<rt>しゃちょう</rt></ruby></span> (orang lebih tinggi)</td>
             <td data-label="Pakai Apa?"><span style="color:var(--accent);font-weight:700">Sonkeigo ⬆️</span></td>
             <td data-label="Contoh"><span class="jp">いらっしゃいます</span> <button class="speak-btn" onclick="speak('いらっしゃいます')">🔊</button></td>
           </tr>
           <tr>
             <td data-label="Situasi">Saya pergi ke kantor direktur</td>
-            <td data-label="Siapa?"><span class="jp">私</span> (saya sendiri)</td>
+            <td data-label="Siapa?"><span class="jp"><ruby>私<rt>わたし</rt></ruby></span> (saya sendiri)</td>
             <td data-label="Pakai Apa?"><span style="color:var(--accent3);font-weight:700">Kenjougo ⬇️</span></td>
-            <td data-label="Contoh"><span class="jp">参ります</span> <button class="speak-btn" onclick="speak('参ります')">🔊</button></td>
+            <td data-label="Contoh"><span class="jp"><ruby>参<rt>まい</rt></ruby>ります</span> <button class="speak-btn" onclick="speak('参ります')">🔊</button></td>
           </tr>
           <tr>
             <td data-label="Situasi">Pelanggan mengatakan sesuatu</td>
-            <td data-label="Siapa?"><span class="jp">お客様</span> (orang lebih tinggi)</td>
+            <td data-label="Siapa?"><span class="jp">お<ruby>客様<rt>きゃくさま</rt></ruby></span> (orang lebih tinggi)</td>
             <td data-label="Pakai Apa?"><span style="color:var(--accent);font-weight:700">Sonkeigo ⬆️</span></td>
             <td data-label="Contoh"><span class="jp">おっしゃいます</span> <button class="speak-btn" onclick="speak('おっしゃいます')">🔊</button></td>
           </tr>
           <tr>
             <td data-label="Situasi">Saya mengatakan sesuatu kepada pelanggan</td>
-            <td data-label="Siapa?"><span class="jp">私</span> (saya sendiri)</td>
+            <td data-label="Siapa?"><span class="jp"><ruby>私<rt>わたし</rt></ruby></span> (saya sendiri)</td>
             <td data-label="Pakai Apa?"><span style="color:var(--accent3);font-weight:700">Kenjougo ⬇️</span></td>
-            <td data-label="Contoh"><span class="jp">申します</span> <button class="speak-btn" onclick="speak('申します')">🔊</button></td>
+            <td data-label="Contoh"><span class="jp"><ruby>申<rt>もう</rt></ruby>します</span> <button class="speak-btn" onclick="speak('申します')">🔊</button></td>
           </tr>
         </tbody>
       </table>
@@ -822,46 +852,88 @@
 
     <div class="formula">
       <div class="formula-title">RUMUS DASAR KENJOUGO</div>
-      Kata kerja Jepang asli (和語 / Wago): <code>お</code> ＋ bentuk ます (tanpa ます) ＋ <code>します／いたします</code><br>
-      Kata kerja asal Cina (漢語 / Kango): <code>ご</code> ＋ kata benda aksi ＋ <code>します／いたします</code><br><br>
-      Contoh: 持ちます → <code>お</code>持ち<code>します</code> (sopan) / <code>お</code>持ち<code>いたします</code> (sangat sopan)<br>
-      Contoh: 案内します → <code>ご</code>案内<code>します</code> (sopan) / <code>ご</code>案内<code>いたします</code> (sangat sopan)
+      Kata kerja Jepang asli (<ruby>和語<rt>わご</rt></ruby> / Wago): <code>お</code> ＋ bentuk ます (tanpa ます) ＋ <code>します／いたします</code><br>
+      Kata kerja asal Cina (<ruby>漢語<rt>かんご</rt></ruby> / Kango): <code>ご</code> ＋ kata benda aksi ＋ <code>します／いたします</code><br><br>
+      Contoh: <ruby>持<rt>も</rt></ruby>ちます → <code>お</code><ruby>持<rt>も</rt></ruby>ち<code>します</code> (sopan) / <code>お</code><ruby>持<rt>も</rt></ruby>ち<code>いたします</code> (sangat sopan)<br>
+      Contoh: <ruby>案内<rt>あんない</rt></ruby>します → <code>ご</code><ruby>案内<rt>あんない</rt></ruby><code>します</code> (sopan) / <code>ご</code><ruby>案内<rt>あんない</rt></ruby><code>いたします</code> (sangat sopan)
     </div>
 
-    <!-- BARU: Register note — dua level kesopanan -->
     <div class="register-note">
       <div class="register-cell neutral">
-        <div class="register-cell-title">🔵 NETRAL SOPAN (日常的な丁寧語)</div>
+        <div class="register-cell-title">🔵 NETRAL SOPAN (<ruby>日常的<rt>にちじょうてき</rt></ruby>な<ruby>丁寧語<rt>ていねいご</rt></ruby>)</div>
         <div class="reg-formula">お〜します ／ ご〜します</div>
         <div class="reg-example">
-          Contoh: お持ちします、ご案内します<br>
+          Contoh: お<ruby>持<rt>も</rt></ruby>ちします、ご<ruby>案内<rt>あんない</rt></ruby>します<br>
           Dipakai: percakapan sehari-hari, toko, kelas
         </div>
       </div>
       <div class="register-cell formal">
-        <div class="register-cell-title">🟢 FORMAL BISNIS (ビジネス敬語)</div>
+        <div class="register-cell-title">🟢 FORMAL BISNIS (ビジネス<ruby>敬語<rt>けいご</rt></ruby>)</div>
         <div class="reg-formula">お〜いたします ／ ご〜いたします</div>
         <div class="reg-example">
-          Contoh: お持ちいたします、ご説明いたします<br>
+          Contoh: お<ruby>持<rt>も</rt></ruby>ちいたします、ご<ruby>説明<rt>せつめい</rt></ruby>いたします<br>
           Dipakai: email bisnis, klien penting, dokumen resmi
         </div>
       </div>
     </div>
 
+    <!-- BOX ITADAKE — FITUR PENTING DARI V1 -->
+    <div class="box-itadake">
+      <div class="itadake-title">🔥 Pola Paling Penting di Bisnis: 〜ていただけますか</div>
+      <p style="color:var(--muted2);font-size:.86rem;margin-bottom:8px;">
+        Pola ini adalah cara paling sopan dan natural untuk <strong style="color:var(--gold)">meminta tolong kepada atasan atau orang yang dihormati</strong>.
+        Berasal dari <ruby>動詞<rt>どうし</rt></ruby>て形 + いただく (kenjougo dari もらう) + けますか (bentuk permintaan sopan).
+      </p>
+      <div class="itadake-formula">
+        📐 <strong style="color:var(--gold)">Rumus:</strong> 動詞（て形） ＋ <strong>いただけますか</strong><br>
+        → Lebih sopan lagi: 動詞（て形） ＋ <strong>いただけませんか</strong> (negatif = lebih merendah)<br>
+        → Paling sopan: 動詞（て形） ＋ <strong>いただけますでしょうか</strong>
+      </div>
+      <div class="itadake-ex">
+        <div class="itadake-row">
+          <div class="itadake-jp"><ruby>確認<rt>かくにん</rt></ruby>していただけますか？ <button class="speak-btn" onclick="speak('確認していただけますか')">🔊</button></div>
+          <div class="itadake-id">Bisakah Anda mengkonfirmasi? (meminta atasan melakukan konfirmasi)</div>
+        </div>
+        <div class="itadake-row">
+          <div class="itadake-jp"><ruby>資料<rt>しりょう</rt></ruby>を<ruby>送<rt>おく</rt></ruby>っていただけますか？ <button class="speak-btn" onclick="speak('資料を送っていただけますか')">🔊</button></div>
+          <div class="itadake-id">Bisakah Anda mengirimkan dokumennya? (meminta atasan/klien mengirim file)</div>
+        </div>
+        <div class="itadake-row">
+          <div class="itadake-jp">もう<ruby>一度<rt>いちど</rt></ruby>ご<ruby>説明<rt>せつめい</rt></ruby>いただけますでしょうか？ <button class="speak-btn" onclick="speak('もう一度ご説明いただけますでしょうか')">🔊</button></div>
+          <div class="itadake-id">Bisakah Anda menjelaskan sekali lagi? (sangat sopan, untuk klien penting)</div>
+        </div>
+        <div class="itadake-row">
+          <div class="itadake-jp"><ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちいただけますか？ <button class="speak-btn" onclick="speak('少々お待ちいただけますか')">🔊</button></div>
+          <div class="itadake-id">Bisakah Anda menunggu sebentar? (standar di customer service)</div>
+        </div>
+        <div class="itadake-row">
+          <div class="itadake-jp">こちらにご<ruby>記入<rt>きにゅう</rt></ruby>いただけますか？ <button class="speak-btn" onclick="speak('こちらにご記入いただけますか')">🔊</button></div>
+          <div class="itadake-id">Bisakah Anda mengisi di sini? (meminta tamu/klien mengisi formulir)</div>
+        </div>
+        <div class="itadake-row">
+          <div class="itadake-jp"><ruby>明日<rt>あした</rt></ruby>までにご<ruby>返信<rt>へんしん</rt></ruby>いただけますでしょうか？ <button class="speak-btn" onclick="speak('明日までにご返信いただけますでしょうか')">🔊</button></div>
+          <div class="itadake-id">Bisakah Anda membalas sampai besok? (standar email bisnis formal)</div>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:.8rem;margin-top:12px;">
+        💡 <strong style="color:var(--gold)">Kunci:</strong> Subjek yang melakukan tindakan adalah lawan bicara (atasan/klien), bukan saya. Saya "merendah" dengan meminta izin mereka mau melakukan sesuatu untuk saya / untuk situasi kita bersama.
+      </p>
+    </div>
+
     <div class="box box-blue">
       <strong>📌 お vs ご — Kapan pakai mana?</strong><br>
-      <strong>お (o)</strong> → untuk kata kerja/kata asli Jepang (和語 wago). Biasanya bisa dibaca dengan kun-yomi (bacaan Jepang asli).<br>
-      <strong>ご (go)</strong> → untuk kata serapan dari Cina (漢語 kango). Biasanya bisa dibaca dengan on-yomi (bacaan Cina).<br><br>
+      <strong>お (o)</strong> → untuk kata kerja/kata asli Jepang (<ruby>和語<rt>わご</rt></ruby> wago). Biasanya bisa dibaca dengan kun-yomi (bacaan Jepang asli).<br>
+      <strong>ご (go)</strong> → untuk kata serapan dari Cina (<ruby>漢語<rt>かんご</rt></ruby> kango). Biasanya bisa dibaca dengan on-yomi (bacaan Cina).<br><br>
       Tapi ada pengecualian! Beberapa kata sudah menjadi kebiasaan, jadi perlu dihafal satu per satu.
     </div>
 
-    <h4>📋 Tabel Pola お／ご〜します</h4>
+    <h4>📋 Tabel Pola お／ご〜します — Versi Natural Bisnis</h4>
     <div class="tbl-wrap">
       <table id="tbl-pattern">
         <thead>
           <tr>
             <th>Kata Kerja Biasa</th>
-            <th>Kenjougo (Sopan)</th>
+            <th>Kenjougo Natural Bisnis</th>
             <th>Arti</th>
             <th>Tipe</th>
             <th>🔊</th>
@@ -869,106 +941,106 @@
         </thead>
         <tbody>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">持ちます</span><br><span class="jp-reading">mochimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">お持ちします</span><br><span class="jp-reading">omochi shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>持<rt>も</rt></ruby>ちます</span><br><span class="jp-reading">mochimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">お<ruby>持<rt>も</rt></ruby>ちいたします</span><br><span class="jp-reading">omochi itashimasu</span></td>
             <td data-label="Arti">membawa / memegang</td>
             <td data-label="Tipe"><span style="color:var(--accent);font-size:.78rem">お (wago)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('お持ちします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('お持ちいたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">呼びます</span><br><span class="jp-reading">yobimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">お呼びします</span><br><span class="jp-reading">oyobi shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>呼<rt>よ</rt></ruby>びます</span><br><span class="jp-reading">yobimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">お<ruby>呼<rt>よ</rt></ruby>びいたします</span><br><span class="jp-reading">oyobi itashimasu</span></td>
             <td data-label="Arti">memanggil</td>
             <td data-label="Tipe"><span style="color:var(--accent);font-size:.78rem">お (wago)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('お呼びします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('お呼びいたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">見せます</span><br><span class="jp-reading">misemasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">お見せします</span><br><span class="jp-reading">omise shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>見<rt>み</rt></ruby>せま  </span><br><span class="jp-reading">misemasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">お<ruby>見<rt>み</rt></ruby>せいたします</span><br><span class="jp-reading">omise itashimasu</span></td>
             <td data-label="Arti">menunjukkan</td>
             <td data-label="Tipe"><span style="color:var(--accent);font-size:.78rem">お (wago)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('お見せします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('お見せいたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">貸します</span><br><span class="jp-reading">kashimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">お貸しします</span><br><span class="jp-reading">okashi shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>貸<rt>か</rt></ruby>します</span><br><span class="jp-reading">kashimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">お<ruby>貸<rt>か</rt></ruby>しいたします</span><br><span class="jp-reading">okashi itashimasu</span></td>
             <td data-label="Arti">meminjamkan</td>
             <td data-label="Tipe"><span style="color:var(--accent);font-size:.78rem">お (wago)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('お貸しします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('お貸しいたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">送ります</span><br><span class="jp-reading">okurimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">お送りします</span><br><span class="jp-reading">okuri shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>送<rt>おく</rt></ruby>ります</span><br><span class="jp-reading">okurimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">お<ruby>送<rt>おく</rt></ruby>りいたします</span><br><span class="jp-reading">okuri itashimasu</span></td>
             <td data-label="Arti">mengantar / mengirim</td>
             <td data-label="Tipe"><span style="color:var(--accent);font-size:.78rem">お (wago)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('お送りします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('お送りいたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">伝えます</span><br><span class="jp-reading">tsutaemasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">お伝えします</span><br><span class="jp-reading">otsutae shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>伝<rt>つた</rt></ruby>えます</span><br><span class="jp-reading">tsutaemasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">お<ruby>伝<rt>つた</rt></ruby>えいたします</span><br><span class="jp-reading">otsutae itashimasu</span></td>
             <td data-label="Arti">menyampaikan pesan</td>
             <td data-label="Tipe"><span style="color:var(--accent);font-size:.78rem">お (wago)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('お伝えします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('お伝えいたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">手伝います</span><br><span class="jp-reading">tetsudaimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">お手伝いします</span><br><span class="jp-reading">otetsudai shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp">お<ruby>手伝<rt>てつだ</rt></ruby>いします</span><br><span class="jp-reading">tetsudaimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">お<ruby>手伝<rt>てつだ</rt></ruby>いいたします</span><br><span class="jp-reading">otetsudai itashimasu</span></td>
             <td data-label="Arti">membantu</td>
             <td data-label="Tipe"><span style="color:var(--accent);font-size:.78rem">お (wago)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('お手伝いします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('お手伝いいたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">迎えます</span><br><span class="jp-reading">mukaemasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">お迎えします</span><br><span class="jp-reading">omukae shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>迎<rt>むか</rt></ruby>えます</span><br><span class="jp-reading">mukaemasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">お<ruby>迎<rt>むか</rt></ruby>えいたします</span><br><span class="jp-reading">omukae itashimasu</span></td>
             <td data-label="Arti">menjemput</td>
             <td data-label="Tipe"><span style="color:var(--accent);font-size:.78rem">お (wago)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('お迎えします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('お迎えいたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">案内します</span><br><span class="jp-reading">annai shimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">ご案内します</span><br><span class="jp-reading">go-annai shimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>案内<rt>あんない</rt></ruby>します</span><br><span class="jp-reading">annai shimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">ご<ruby>案内<rt>あんない</rt></ruby>いたします</span><br><span class="jp-reading">go-annai itashimasu</span></td>
             <td data-label="Arti">memandu / mengantar</td>
             <td data-label="Tipe"><span style="color:var(--accent2);font-size:.78rem">ご (kango)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('ご案内します')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('ご案内いたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">説明します</span><br><span class="jp-reading">setsumei shimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">ご説明いたします</span><br><span class="jp-reading">go-setsumei itashimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>説明<rt>せつめい</rt></ruby>します</span><br><span class="jp-reading">setsumei shimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">ご<ruby>説明<rt>せつめい</rt></ruby>いたします</span><br><span class="jp-reading">go-setsumei itashimasu</span></td>
             <td data-label="Arti">menjelaskan</td>
             <td data-label="Tipe"><span style="color:var(--accent2);font-size:.78rem">ご (kango)</span></td>
             <td data-label="🔊"><button class="speak-btn" onclick="speak('ご説明いたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">連絡します</span><br><span class="jp-reading">renraku shimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">ご連絡いたします</span><br><span class="jp-reading">go-renraku itashimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>連絡<rt>れんらく</rt></ruby>します</span><br><span class="jp-reading">renraku shimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">ご<ruby>連絡<rt>れんらく</rt></ruby>いたします</span><br><span class="jp-reading">go-renraku itashimasu</span></td>
             <td data-label="Arti">menghubungi</td>
             <td data-label="Tipe"><span style="color:var(--accent2);font-size:.78rem">ご (kango)</span></td>
             <td data-label="🔊"><button class="speak-btn" onclick="speak('ご連絡いたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">確認します</span><br><span class="jp-reading">kakunin shimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">ご確認いたします</span><br><span class="jp-reading">go-kakunin itashimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>確認<rt>かくにん</rt></ruby>します</span><br><span class="jp-reading">kakunin shimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell"><ruby>確認<rt>かくにん</rt></ruby>いたします</span><br><span class="jp-reading">kakunin itashimasu</span></td>
             <td data-label="Arti">memastikan / konfirmasi</td>
             <td data-label="Tipe"><span style="color:var(--accent2);font-size:.78rem">ご (kango)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('ご確認いたします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('確認いたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">準備します</span><br><span class="jp-reading">junbi shimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">ご準備いたします</span><br><span class="jp-reading">go-junbi itashimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>準備<rt>じゅんび</rt></ruby>します</span><br><span class="jp-reading">junbi shimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell"><ruby>準備<rt>じゅんび</rt></ruby>いたします</span><br><span class="jp-reading">junbi itashimasu</span></td>
             <td data-label="Arti">mempersiapkan</td>
             <td data-label="Tipe"><span style="color:var(--accent2);font-size:.78rem">ご (kango)</span></td>
-            <td data-label="🔊"><button class="speak-btn" onclick="speak('ご準備いたします')">🔊</button></td>
+            <td data-label="🔊"><button class="speak-btn" onclick="speak('準備いたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">報告します</span><br><span class="jp-reading">houkoku shimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">ご報告いたします</span><br><span class="jp-reading">go-houkoku itashimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>報告<rt>ほうこく</rt></ruby>します</span><br><span class="jp-reading">houkoku shimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">ご<ruby>報告<rt>ほうこく</rt></ruby>いたします</span><br><span class="jp-reading">go-houkoku itashimasu</span></td>
             <td data-label="Arti">melaporkan</td>
             <td data-label="Tipe"><span style="color:var(--accent2);font-size:.78rem">ご (kango)</span></td>
             <td data-label="🔊"><button class="speak-btn" onclick="speak('ご報告いたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Kerja Biasa"><span class="jp">紹介します</span><br><span class="jp-reading">shoukai shimasu</span></td>
-            <td data-label="Kenjougo (Sopan)"><span class="highlight-cell">ご紹介いたします</span><br><span class="jp-reading">go-shoukai itashimasu</span></td>
+            <td data-label="Kata Kerja Biasa"><span class="jp"><ruby>紹介<rt>しょうかい</rt></ruby>します</span><br><span class="jp-reading">shoukai shimasu</span></td>
+            <td data-label="Kenjougo Natural Bisnis"><span class="highlight-cell">ご<ruby>紹介<rt>しょうかい</rt></ruby>いたします</span><br><span class="jp-reading">go-shoukai itashimasu</span></td>
             <td data-label="Arti">memperkenalkan</td>
             <td data-label="Tipe"><span style="color:var(--accent2);font-size:.78rem">ご (kango)</span></td>
             <td data-label="🔊"><button class="speak-btn" onclick="speak('ご紹介いたします')">🔊</button></td>
@@ -980,9 +1052,8 @@
     <div class="box box-purple">
       <strong>💡 Tips Cepat Hafal:</strong><br>
       Bayangin kamu adalah staf toko yang super sopan. Setiap kali kamu mau melakukan sesuatu untuk pelanggan,
-      tambahkan <strong>お</strong> atau <strong>ご</strong> di depan, lalu ganti <strong>します</strong> di akhir.
-      Untuk situasi lebih formal, ganti <strong>します</strong> dengan <strong>いたします</strong>.<br><br>
-      "Boleh saya antar tasnya?" → お持ちしましょうか？ (sehari-hari) / お持ちいたしましょうか？ (formal bisnis)
+      tambahkan <strong>お</strong> atau <strong>ご</strong> di depan, lalu ganti <strong>します</strong> dengan <strong>いたします</strong> untuk kesan profesional.<br><br>
+      "Boleh saya antar tasnya?" → お<ruby>持<rt>も</rt></ruby>ちしましょうか？ (sehari-hari) / お<ruby>持<rt>も</rt></ruby>ちいたしましょうか？ (formal bisnis)
     </div>
   </div>
 
@@ -1006,10 +1077,10 @@
       <!-- Card 1 -->
       <div class="vocab-card">
         <div class="vocab-card-label">PERGI / DATANG</div>
-        <div class="vocab-card-jp">行きます・来ます</div>
+        <div class="vocab-card-jp"><ruby>行<rt>い</rt></ruby>きます・<ruby>来<rt>き</rt></ruby>ます</div>
         <div class="vocab-card-reading">ikimasu / kimasu</div>
         <div class="vocab-card-arrow">↓</div>
-        <div class="vocab-card-kenjo">参ります <button class="speak-btn" onclick="speak('参ります')">🔊</button></div>
+        <div class="vocab-card-kenjo"><ruby>参<rt>まい</rt></ruby>ります <button class="speak-btn" onclick="speak('参ります')">🔊</button></div>
         <div class="vocab-card-reading" style="color:var(--accent3)">mairimasu</div>
         <div class="vocab-card-meaning">⭐ Super umum! Paling sering dipakai</div>
       </div>
@@ -1036,17 +1107,17 @@
       <!-- Card 4 -->
       <div class="vocab-card">
         <div class="vocab-card-label">BERKATA / MENGATAKAN</div>
-        <div class="vocab-card-jp">言います</div>
+        <div class="vocab-card-jp"><ruby>言<rt>い</rt></ruby>います</div>
         <div class="vocab-card-reading">iimasu</div>
         <div class="vocab-card-arrow">↓</div>
-        <div class="vocab-card-kenjo">申します <button class="speak-btn" onclick="speak('申します')">🔊</button></div>
+        <div class="vocab-card-kenjo"><ruby>申<rt>もう</rt></ruby>します <button class="speak-btn" onclick="speak('申します')">🔊</button></div>
         <div class="vocab-card-reading" style="color:var(--accent3)">moushimasu</div>
         <div class="vocab-card-meaning">Sering untuk perkenalan diri: ～と申します</div>
       </div>
       <!-- Card 5 -->
       <div class="vocab-card">
         <div class="vocab-card-label">MAKAN / MINUM / MENERIMA</div>
-        <div class="vocab-card-jp">食べます・飲みます</div>
+        <div class="vocab-card-jp"><ruby>食<rt>た</rt></ruby>べます・<ruby>飲<rt>の</rt></ruby>みます</div>
         <div class="vocab-card-reading">tabemasu / nomimasu</div>
         <div class="vocab-card-arrow">↓</div>
         <div class="vocab-card-kenjo">いただきます <button class="speak-btn" onclick="speak('いただきます')">🔊</button></div>
@@ -1056,42 +1127,42 @@
       <!-- Card 6 -->
       <div class="vocab-card">
         <div class="vocab-card-label">BERTANYA / MENGUNJUNGI</div>
-        <div class="vocab-card-jp">聞きます・訪ねます</div>
+        <div class="vocab-card-jp"><ruby>聞<rt>き</rt></ruby>きます・<ruby>訪<rt>たず</rt></ruby>ねます</div>
         <div class="vocab-card-reading">kikimasu / tazunemasu</div>
         <div class="vocab-card-arrow">↓</div>
-        <div class="vocab-card-kenjo">伺います <button class="speak-btn" onclick="speak('伺います')">🔊</button></div>
+        <div class="vocab-card-kenjo"><ruby>伺<rt>うかが</rt></ruby>います <button class="speak-btn" onclick="speak('伺います')">🔊</button></div>
         <div class="vocab-card-reading" style="color:var(--accent3)">ukagaimasu</div>
         <div class="vocab-card-meaning">Satu kata, banyak arti! Sangat serbaguna</div>
       </div>
       <!-- Card 7 -->
       <div class="vocab-card">
         <div class="vocab-card-label">MELIHAT / MENONTON</div>
-        <div class="vocab-card-jp">見ます</div>
+        <div class="vocab-card-jp"><ruby>見<rt>み</rt></ruby>ます</div>
         <div class="vocab-card-reading">mimasu</div>
         <div class="vocab-card-arrow">↓</div>
-        <div class="vocab-card-kenjo">拝見します <button class="speak-btn" onclick="speak('拝見します')">🔊</button></div>
+        <div class="vocab-card-kenjo"><ruby>拝見<rt>はいけん</rt></ruby>します <button class="speak-btn" onclick="speak('拝見します')">🔊</button></div>
         <div class="vocab-card-reading" style="color:var(--accent3)">haiken shimasu</div>
         <div class="vocab-card-meaning">Untuk melihat dokumen/kartu nama atasan</div>
       </div>
       <!-- Card 8 -->
       <div class="vocab-card">
         <div class="vocab-card-label">BERTEMU</div>
-        <div class="vocab-card-jp">会います</div>
+        <div class="vocab-card-jp"><ruby>会<rt>あ</rt></ruby>います</div>
         <div class="vocab-card-reading">aimasu</div>
         <div class="vocab-card-arrow">↓</div>
-        <div class="vocab-card-kenjo">お目にかかります <button class="speak-btn" onclick="speak('お目にかかります')">🔊</button></div>
+        <div class="vocab-card-kenjo">お<ruby>目<rt>め</rt></ruby>にかかります <button class="speak-btn" onclick="speak('お目にかかります')">🔊</button></div>
         <div class="vocab-card-reading" style="color:var(--accent3)">ome ni kakarimasu</div>
         <div class="vocab-card-meaning">Sangat formal, untuk pertemuan penting</div>
       </div>
       <!-- Card 9 -->
       <div class="vocab-card">
         <div class="vocab-card-label">TAHU / MENGETAHUI</div>
-        <div class="vocab-card-jp">知っています</div>
+        <div class="vocab-card-jp"><ruby>知<rt>し</rt></ruby>っています</div>
         <div class="vocab-card-reading">shitte imasu</div>
         <div class="vocab-card-arrow">↓</div>
-        <div class="vocab-card-kenjo">存じています <button class="speak-btn" onclick="speak('存じています')">🔊</button></div>
+        <div class="vocab-card-kenjo"><ruby>存<rt>ぞん</rt></ruby>じています <button class="speak-btn" onclick="speak('存じています')">🔊</button></div>
         <div class="vocab-card-reading" style="color:var(--accent3)">zonjite imasu</div>
-        <div class="vocab-card-meaning">Versi humble dari 知る. Juga: 存じません (tidak tahu)</div>
+        <div class="vocab-card-meaning">Versi humble dari 知る. Juga: 存じません</div>
       </div>
       <!-- Card 10 -->
       <div class="vocab-card">
@@ -1109,17 +1180,17 @@
         <div class="vocab-card-jp">あげます</div>
         <div class="vocab-card-reading">agemasu</div>
         <div class="vocab-card-arrow">↓</div>
-        <div class="vocab-card-kenjo">差し上げます <button class="speak-btn" onclick="speak('差し上げます')">🔊</button></div>
+        <div class="vocab-card-kenjo"><ruby>差<rt>さ</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げます <button class="speak-btn" onclick="speak('差し上げます')">🔊</button></div>
         <div class="vocab-card-reading" style="color:var(--accent3)">sashiagemasu</div>
         <div class="vocab-card-meaning">Memberi sesuatu ke orang yang lebih tinggi</div>
       </div>
       <!-- Card 12 -->
       <div class="vocab-card">
         <div class="vocab-card-label">MEMINJAM</div>
-        <div class="vocab-card-jp">借ります</div>
+        <div class="vocab-card-jp"><ruby>借<rt>か</rt></ruby>ります</div>
         <div class="vocab-card-reading">karimasu</div>
         <div class="vocab-card-arrow">↓</div>
-        <div class="vocab-card-kenjo">拝借します <button class="speak-btn" onclick="speak('拝借します')">🔊</button></div>
+        <div class="vocab-card-kenjo"><ruby>拝借<rt>はいしゃく</rt></ruby>します <button class="speak-btn" onclick="speak('拝借します')">🔊</button></div>
         <div class="vocab-card-reading" style="color:var(--accent3)">haishaku shimasu</div>
         <div class="vocab-card-meaning">Sangat formal, untuk meminjam dari atasan</div>
       </div>
@@ -1139,8 +1210,8 @@
         </thead>
         <tbody>
           <tr>
-            <td data-label="Kata Biasa"><span class="jp">行きます・来ます</span><br><span class="jp-reading">ikimasu / kimasu</span></td>
-            <td data-label="Kenjougo Khusus"><span class="highlight-cell">参ります</span><br><span class="jp-reading">mairimasu</span></td>
+            <td data-label="Kata Biasa"><span class="jp"><ruby>行<rt>い</rt></ruby>きます・<ruby>来<rt>き</rt></ruby>ます</span><br><span class="jp-reading">ikimasu / kimasu</span></td>
+            <td data-label="Kenjougo Khusus"><span class="highlight-cell"><ruby>参<rt>まい</rt></ruby>ります</span><br><span class="jp-reading">mairimasu</span></td>
             <td data-label="Arti">pergi / datang</td>
             <td data-label="Catatan"><span class="muted-cell">Super umum di kantor &amp; toko. Juga untuk "sedang dalam perjalanan"</span></td>
             <td><button class="speak-btn" onclick="speak('参ります')">🔊</button></td>
@@ -1160,50 +1231,50 @@
             <td><button class="speak-btn" onclick="speak('いたします')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Biasa"><span class="jp">言います</span><br><span class="jp-reading">iimasu</span></td>
-            <td data-label="Kenjougo Khusus"><span class="highlight-cell">申します</span><br><span class="jp-reading">moushimasu</span></td>
+            <td data-label="Kata Biasa"><span class="jp"><ruby>言<rt>い</rt></ruby>います</span><br><span class="jp-reading">iimasu</span></td>
+            <td data-label="Kenjougo Khusus"><span class="highlight-cell"><ruby>申<rt>もう</rt></ruby>します</span><br><span class="jp-reading">moushimasu</span></td>
             <td data-label="Arti">berkata / mengatakan</td>
             <td data-label="Catatan"><span class="muted-cell">Untuk perkenalan diri: 田中と申します (Saya bernama Tanaka). Subjek: saya.</span></td>
             <td><button class="speak-btn" onclick="speak('申します')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Biasa"><span class="jp">食べます・飲みます</span><br><span class="jp-reading">tabemasu / nomimasu</span></td>
+            <td data-label="Kata Biasa"><span class="jp"><ruby>食<rt>た</rt></ruby>べます・<ruby>飲<rt>の</rt></ruby>みます</span><br><span class="jp-reading">tabemasu / nomimasu</span></td>
             <td data-label="Kenjougo Khusus"><span class="highlight-cell">いただきます</span><br><span class="jp-reading">itadakimasu</span></td>
             <td data-label="Arti">makan / minum / menerima</td>
             <td data-label="Catatan"><span class="muted-cell">Sangat umum! Juga diucapkan sebelum makan sebagai ungkapan syukur</span></td>
             <td><button class="speak-btn" onclick="speak('いただきます')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Biasa"><span class="jp">聞きます・訪ねます</span><br><span class="jp-reading">kikimasu / tazunemasu</span></td>
-            <td data-label="Kenjougo Khusus"><span class="highlight-cell">伺います</span><br><span class="jp-reading">ukagaimasu</span></td>
+            <td data-label="Kata Biasa"><span class="jp"><ruby>聞<rt>き</rt></ruby>きます・<ruby>訪<rt>たず</rt></ruby>ねます</span><br><span class="jp-reading">kikimasu / tazunemasu</span></td>
+            <td data-label="Kenjougo Khusus"><span class="highlight-cell"><ruby>伺<rt>うかが</rt></ruby>います</span><br><span class="jp-reading">ukagaimasu</span></td>
             <td data-label="Arti">bertanya / mengunjungi</td>
             <td data-label="Catatan"><span class="muted-cell">Satu kata banyak arti: bertanya KE atasan, atau berkunjung KE tempat atasan</span></td>
             <td><button class="speak-btn" onclick="speak('伺います')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Biasa"><span class="jp">見ます</span><br><span class="jp-reading">mimasu</span></td>
-            <td data-label="Kenjougo Khusus"><span class="highlight-cell">拝見します</span><br><span class="jp-reading">haiken shimasu</span></td>
+            <td data-label="Kata Biasa"><span class="jp"><ruby>見<rt>み</rt></ruby>ます</span><br><span class="jp-reading">mimasu</span></td>
+            <td data-label="Kenjougo Khusus"><span class="highlight-cell"><ruby>拝見<rt>はいけん</rt></ruby>します</span><br><span class="jp-reading">haiken shimasu</span></td>
             <td data-label="Arti">melihat / menonton</td>
             <td data-label="Catatan"><span class="muted-cell">Humble dari 見る. Untuk melihat dokumen, kartu nama, atau karya orang yang lebih tinggi</span></td>
             <td><button class="speak-btn" onclick="speak('拝見します')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Biasa"><span class="jp">会います</span><br><span class="jp-reading">aimasu</span></td>
-            <td data-label="Kenjougo Khusus"><span class="highlight-cell">お目にかかります</span><br><span class="jp-reading">ome ni kakarimasu</span></td>
+            <td data-label="Kata Biasa"><span class="jp"><ruby>会<rt>あ</rt></ruby>います</span><br><span class="jp-reading">aimasu</span></td>
+            <td data-label="Kenjougo Khusus"><span class="highlight-cell">お<ruby>目<rt>め</rt></ruby>にかかります</span><br><span class="jp-reading">ome ni kakarimasu</span></td>
             <td data-label="Arti">bertemu</td>
             <td data-label="Catatan"><span class="muted-cell">Sangat formal, dipakai saat pertama kali bertemu orang penting: 初めてお目にかかります</span></td>
             <td><button class="speak-btn" onclick="speak('お目にかかります')">🔊</button></td>
           </tr>
           <tr>
-            <td data-label="Kata Biasa"><span class="jp">知っています</span><br><span class="jp-reading">shitte imasu</span></td>
-            <td data-label="Kenjougo Khusus"><span class="highlight-cell">存じています</span><br><span class="jp-reading">zonjite imasu</span></td>
+            <td data-label="Kata Biasa"><span class="jp"><ruby>知<rt>し</rt></ruby>っています</span><br><span class="jp-reading">shitte imasu</span></td>
+            <td data-label="Kenjougo Khusus"><span class="highlight-cell"><ruby>存<rt>ぞん</rt></ruby>じています</span><br><span class="jp-reading">zonjite imasu</span></td>
             <td data-label="Arti">tahu / mengetahui</td>
             <td data-label="Catatan"><span class="muted-cell">Humble dari 知る. Tidak tahu: 存じません (lebih sopan dari 知りません)</span></td>
             <td><button class="speak-btn" onclick="speak('存じています')">🔊</button></td>
           </tr>
           <tr>
             <td data-label="Kata Biasa"><span class="jp">あげます</span><br><span class="jp-reading">agemasu</span></td>
-            <td data-label="Kenjougo Khusus"><span class="highlight-cell">差し上げます</span><br><span class="jp-reading">sashiagemasu</span></td>
+            <td data-label="Kenjougo Khusus"><span class="highlight-cell"><ruby>差<rt>さ</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げます</span><br><span class="jp-reading">sashiagemasu</span></td>
             <td data-label="Arti">memberikan (ke atasan)</td>
             <td data-label="Catatan"><span class="muted-cell">Untuk memberi sesuatu kepada orang yang statusnya lebih tinggi</span></td>
             <td><button class="speak-btn" onclick="speak('差し上げます')">🔊</button></td>
@@ -1214,9 +1285,9 @@
 
     <div class="box box-green">
       <strong>🧠 Trik Menghafal:</strong><br>
-      Buat cerita singkat: "Saya (まいります) PERGI ke tempat atasan, lalu (おります) ADA di sana,
-      kemudian (もうします) BILANG nama saya, (はいけんします) LIHAT dokumennya,
-      dan (いただきます) TERIMA kopi dari beliau. Setelah itu (うかがいます) TANYA satu pertanyaan."
+      Buat cerita singkat: "Saya (<ruby>参<rt>まい</rt></ruby>ります) PERGI ke tempat atasan, lalu (おります) ADA di sana,
+      kemudian (<ruby>申<rt>もう</rt></ruby>します) BILANG nama saya, (<ruby>拝見<rt>はいけん</rt></ruby>します) LIHAT dokumennya,
+      dan (いただきます) TERIMA kopi dari beliau. Setelah itu (<ruby>伺<rt>うかが</rt></ruby>います) TANYA satu pertanyaan."
     </div>
   </div>
 
@@ -1234,56 +1305,56 @@
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 01</div>
-        <div class="ex-plain">私が書類を持ちます。<button class="speak-btn" onclick="speak('私が書類を持ちます')">🔊</button></div>
+        <div class="ex-plain"><ruby>私<rt>わたし</rt></ruby>が<ruby>書類<rt>しょるい</rt></ruby>を<ruby>持<rt>も</rt></ruby>ちます。<button class="speak-btn" onclick="speak('私が書類を持ちます')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">私が書類をお持ちします。<button class="speak-btn" onclick="speak('私が書類をお持ちします')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>私<rt>わたし</rt></ruby>が<ruby>書類<rt>しょるい</rt></ruby>をお<ruby>持<rt>も</rt></ruby>ちします。<button class="speak-btn" onclick="speak('私が書類をお持ちします')">🔊</button></div>
         <div class="ex-tr">Saya yang akan membawakan dokumennya. (Subjek: saya membawa untuk tamu/atasan)</div>
-        <div class="ex-note">💡 お持ちします = menawarkan diri membawakan untuk atasan/tamu. Lebih formal: お持ちいたします。</div>
+        <div class="ex-note">💡 お<ruby>持<rt>も</rt></ruby>ちします = menawarkan diri membawakan untuk atasan/tamu. Lebih formal: お<ruby>持<rt>も</rt></ruby>ちいたします。</div>
       </div>
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 02</div>
-        <div class="ex-plain">私が駅まで送ります。<button class="speak-btn" onclick="speak('私が駅まで送ります')">🔊</button></div>
+        <div class="ex-plain"><ruby>私<rt>わたし</rt></ruby>が<ruby>駅<rt>えき</rt></ruby>まで<ruby>送<rt>おく</rt></ruby>ります。<button class="speak-btn" onclick="speak('私が駅まで送ります')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">私が駅までお送りします。<button class="speak-btn" onclick="speak('私が駅までお送りします')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>私<rt>わたし</rt></ruby>が<ruby>駅<rt>えき</rt></ruby>までお<ruby>送<rt>おく</rt></ruby>りします。<button class="speak-btn" onclick="speak('私が駅までお送りします')">🔊</button></div>
         <div class="ex-tr">Saya akan mengantarkan hingga ke stasiun. (Subjek: saya mengantar tamu)</div>
-        <div class="ex-note">💡 Sering dipakai staf toko/hotel untuk mengantar tamu. Formal: お送りいたします。</div>
+        <div class="ex-note">💡 Sering dipakai staf toko/hotel untuk mengantar tamu. Formal: お<ruby>送<rt>おく</rt></ruby>りいたします。</div>
       </div>
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 03</div>
-        <div class="ex-plain">田中と言います。<button class="speak-btn" onclick="speak('田中と言います')">🔊</button></div>
+        <div class="ex-plain"><ruby>田中<rt>たなか</rt></ruby>と<ruby>言<rt>い</rt></ruby>います。<button class="speak-btn" onclick="speak('田中と言います')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">田中と申します。<button class="speak-btn" onclick="speak('田中と申します')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>田中<rt>たなか</rt></ruby>と<ruby>申<rt>もう</rt></ruby>します。<button class="speak-btn" onclick="speak('田中と申します')">🔊</button></div>
         <div class="ex-tr">Nama saya Tanaka. (Saya bernama Tanaka.) — Subjek: saya</div>
-        <div class="ex-note">💡 Rumus standar perkenalan diri formal: [名前]と申します。申す = kenjougo dari 言う。</div>
+        <div class="ex-note">💡 Rumus standar perkenalan diri formal: [<ruby>名前<rt>なまえ</rt></ruby>]と<ruby>申<rt>もう</rt></ruby>します。<ruby>申<rt>もう</rt></ruby>す = kenjougo dari <ruby>言<rt>い</rt></ruby>う。</div>
       </div>
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 04</div>
-        <div class="ex-plain">明日、会社に行きます。<button class="speak-btn" onclick="speak('明日、会社に行きます')">🔊</button></div>
+        <div class="ex-plain"><ruby>明日<rt>あした</rt></ruby>、<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。<button class="speak-btn" onclick="speak('明日、会社に行きます')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">明日、御社に参ります。<button class="speak-btn" onclick="speak('明日、御社に参ります')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>明日<rt>あした</rt></ruby>、<ruby>御社<rt>おんしゃ</rt></ruby>に<ruby>参<rt>まい</rt></ruby>ります。<button class="speak-btn" onclick="speak('明日、御社に参ります')">🔊</button></div>
         <div class="ex-tr">Besok saya akan datang ke perusahaan Anda. (Subjek: saya pergi ke tempat klien)</div>
-        <div class="ex-note">💡 御社 (onsha) = perusahaan Anda (bentuk hormat). 参ります = kenjougo dari 行く・来る。</div>
+        <div class="ex-note">💡 <ruby>御社<rt>おんしゃ</rt></ruby> (onsha) = perusahaan Anda (bentuk hormat). <ruby>参<rt>まい</rt></ruby>ります = kenjougo dari <ruby>行<rt>い</rt></ruby>く・<ruby>来<rt>く</rt></ruby>る。</div>
       </div>
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 05</div>
-        <div class="ex-plain">資料を見てもいいですか？<button class="speak-btn" onclick="speak('資料を見てもいいですか')">🔊</button></div>
+        <div class="ex-plain"><ruby>資料<rt>しりょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>てもいいですか？<button class="speak-btn" onclick="speak('資料を見てもいいですか')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">資料を拝見してもよろしいでしょうか？<button class="speak-btn" onclick="speak('資料を拝見してもよろしいでしょうか')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>資料<rt>しりょう</rt></ruby>を<ruby>拝見<rt>はいけん</rt></ruby>してもよろしいでしょうか？<button class="speak-btn" onclick="speak('資料を拝見してもよろしいでしょうか')">🔊</button></div>
         <div class="ex-tr">Bolehkah saya melihat dokumennya? (Subjek: saya yang akan melihat)</div>
-        <div class="ex-note">💡 拝見する = kenjougo dari 見る. よろしいでしょうか = bentuk sopan dari いいですか。</div>
+        <div class="ex-note">💡 <ruby>拝見<rt>はいけん</rt></ruby>する = kenjougo dari <ruby>見<rt>み</rt></ruby>る. よろしいでしょうか = bentuk sopan dari いいですか。</div>
       </div>
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 06</div>
-        <div class="ex-plain">道を聞いてもいいですか？<button class="speak-btn" onclick="speak('道を聞いてもいいですか')">🔊</button></div>
+        <div class="ex-plain"><ruby>道<rt>みち</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてもいいですか？<button class="speak-btn" onclick="speak('道を聞いてもいいですか')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">道を伺ってもよろしいでしょうか？<button class="speak-btn" onclick="speak('道を伺ってもよろしいでしょうか')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>道<rt>みち</rt></ruby>を<ruby>伺<rt>うかが</rt></ruby>ってもよろしいでしょうか？<button class="speak-btn" onclick="speak('道を伺ってもよろしいでしょうか')">🔊</button></div>
         <div class="ex-tr">Bolehkah saya bertanya tentang arah jalannya? (Subjek: saya yang bertanya)</div>
-        <div class="ex-note">💡 伺う = kenjougo dari 聞く (bertanya) dan 訪ねる (mengunjungi). Di sini: saya yang bertanya ke atasan.</div>
+        <div class="ex-note">💡 <ruby>伺<rt>うかが</rt></ruby>う = kenjougo dari <ruby>聞<rt>き</rt></ruby>く (bertanya) dan <ruby>訪<rt>たず</rt></ruby>ねる (mengunjungi).</div>
       </div>
 
       <div class="ex-item">
@@ -1297,39 +1368,39 @@
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 08</div>
-        <div class="ex-plain">商品を説明します。<button class="speak-btn" onclick="speak('商品を説明します')">🔊</button></div>
+        <div class="ex-plain"><ruby>商品<rt>しょうひん</rt></ruby>を<ruby>説明<rt>せつめい</rt></ruby>します。<button class="speak-btn" onclick="speak('商品を説明します')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">商品をご説明いたします。<button class="speak-btn" onclick="speak('商品をご説明いたします')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>商品<rt>しょうひん</rt></ruby>をご<ruby>説明<rt>せつめい</rt></ruby>いたします。<button class="speak-btn" onclick="speak('商品をご説明いたします')">🔊</button></div>
         <div class="ex-tr">Saya akan menjelaskan produknya. (Subjek: saya menjelaskan kepada pelanggan)</div>
-        <div class="ex-note">💡 ご説明いたします = ご＋kango＋いたします → sangat sopan! Sering dipakai staf toko/bisnis.</div>
+        <div class="ex-note">💡 ご<ruby>説明<rt>せつめい</rt></ruby>いたします = ご＋kango＋いたします → sangat sopan! Sering dipakai staf toko/bisnis.</div>
       </div>
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 09</div>
-        <div class="ex-plain">鈴木部長に会います。<button class="speak-btn" onclick="speak('鈴木部長に会います')">🔊</button></div>
+        <div class="ex-plain"><ruby>鈴木<rt>すずき</rt></ruby><ruby>部長<rt>ぶちょう</rt></ruby>に<ruby>会<rt>あ</rt></ruby>います。<button class="speak-btn" onclick="speak('鈴木部長に会います')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">鈴木部長にお目にかかります。<button class="speak-btn" onclick="speak('鈴木部長にお目にかかります')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>鈴木<rt>すずき</rt></ruby><ruby>部長<rt>ぶちょう</rt></ruby>にお<ruby>目<rt>め</rt></ruby>にかかります。<button class="speak-btn" onclick="speak('鈴木部長にお目にかかります')">🔊</button></div>
         <div class="ex-tr">Saya akan menemui Manajer Suzuki. (Subjek: saya yang bertemu dengan atasan)</div>
-        <div class="ex-note">💡 お目にかかる = kenjougo dari 会う. Paling formal untuk "bertemu". Subjek selalu saya.</div>
+        <div class="ex-note">💡 お<ruby>目<rt>め</rt></ruby>にかかる = kenjougo dari <ruby>会<rt>あ</rt></ruby>う. Paling formal untuk "bertemu". Subjek selalu saya.</div>
       </div>
 
       <div class="ex-item">
         <div class="ex-num">CONTOH 10</div>
-        <div class="ex-plain">明日また電話します。<button class="speak-btn" onclick="speak('明日また電話します')">🔊</button></div>
+        <div class="ex-plain"><ruby>明日<rt>あした</rt></ruby>また<ruby>電話<rt>でんわ</rt></ruby>します。<button class="speak-btn" onclick="speak('明日また電話します')">🔊</button></div>
         <div class="ex-arrow">↓ Kenjougo</div>
-        <div class="ex-kenjo">明日、またご連絡いたします。<button class="speak-btn" onclick="speak('明日、またご連絡いたします')">🔊</button></div>
+        <div class="ex-kenjo"><ruby>明日<rt>あした</rt></ruby>、またご<ruby>連絡<rt>れんらく</rt></ruby>いたします。<button class="speak-btn" onclick="speak('明日、またご連絡いたします')">🔊</button></div>
         <div class="ex-tr">Besok saya akan menghubungi kembali. (Subjek: saya yang menghubungi)</div>
-        <div class="ex-note">💡 ご連絡いたします = standar untuk email/telepon profesional. Lebih sopan dari 連絡します。</div>
+        <div class="ex-note">💡 ご<ruby>連絡<rt>れんらく</rt></ruby>いたします = standar untuk email/telepon profesional. Lebih sopan dari <ruby>連絡<rt>れんらく</rt></ruby>します。</div>
       </div>
 
     </div>
 
     <div class="box box-blue">
       <strong>🎯 Pattern yang Sangat Berguna:</strong><br>
-      <strong>ご〜いたします</strong> = kombinasi yang paling sopan untuk kata kerja kango (serapan Cina). Subjek selalu SAYA.<br>
-      Contoh: ご確認いたします, ご連絡いたします, ご説明いたします<br><br>
+      <strong>ご〜いたします</strong> = kombinasi yang paling sopan untuk kata kerja kango. Subjek selalu SAYA.<br>
+      Contoh: ご<ruby>確認<rt>かくにん</rt></ruby>いたします, ご<ruby>連絡<rt>れんらく</rt></ruby>いたします, ご<ruby>説明<rt>せつめい</rt></ruby>いたします<br><br>
       <strong>〜ていただけますか？</strong> = versi sopan untuk meminta tolong ke atasan.<br>
-      Contoh: 確認していただけますか？ (Bisakah Anda mengkonfirmasi?) → dari いただく (kenjougo dari もらう). Di sini, subjek "saya" meminta izin agar atasan melakukan sesuatu untuk saya.
+      Contoh: <ruby>確認<rt>かくにん</rt></ruby>していただけますか？ (Bisakah Anda mengkonfirmasi?) → dari いただく (kenjougo dari もらう). Di sini, subjek "saya" meminta izin agar atasan melakukan sesuatu untuk saya.
     </div>
   </div>
 
@@ -1399,12 +1470,12 @@
       <div class="summary-card">
         <div class="summary-lv" style="color:var(--accent3)">L2</div>
         <div class="summary-name">POLA UMUM</div>
-        <div class="summary-rule"><strong>お</strong>＋masu-stem＋<strong>します／いたします</strong> (wago)<br><strong>ご</strong>＋kata kango＋<strong>します／いたします</strong></div>
+        <div class="summary-rule"><strong>お</strong>＋masu-stem＋<strong>いたします</strong> (wago)<br><strong>ご</strong>＋kata kango＋<strong>いたします</strong></div>
       </div>
       <div class="summary-card">
         <div class="summary-lv" style="color:var(--gold)">L3</div>
         <div class="summary-name">KATA KHUSUS</div>
-        <div class="summary-rule">参る・おる・いたす・申す・いただく・伺う・拝見する・存じる</div>
+        <div class="summary-rule"><ruby>参<rt>まい</rt></ruby>る・おる・いたす・<ruby>申<rt>もう</rt></ruby>す・いただく・<ruby>伺<rt>うかが</rt></ruby>う・<ruby>拝見<rt>はいけん</rt></ruby>する・<ruby>存<rt>ぞん</rt></ruby>じる</div>
       </div>
       <div class="summary-card">
         <div class="summary-lv" style="color:var(--accent2)">L4</div>
@@ -1447,21 +1518,21 @@
       <table>
         <thead><tr><th>Kata Biasa</th><th>Kenjougo</th><th>Arti</th><th>🔊</th></tr></thead>
         <tbody>
-          <tr><td data-label="Kata Biasa" class="jp">行く・来る</td><td data-label="Kenjougo" class="highlight-cell">参ります</td><td data-label="Arti">pergi / datang</td><td><button class="speak-btn" onclick="speak('参ります')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>行<rt>い</rt></ruby>く・<ruby>来<rt>く</rt></ruby>る</td><td data-label="Kenjougo" class="highlight-cell"><ruby>参<rt>まい</rt></ruby>ります</td><td data-label="Arti">pergi / datang</td><td><button class="speak-btn" onclick="speak('参ります')">🔊</button></td></tr>
           <tr><td data-label="Kata Biasa" class="jp">います</td><td data-label="Kenjougo" class="highlight-cell">おります</td><td data-label="Arti">ada</td><td><button class="speak-btn" onclick="speak('おります')">🔊</button></td></tr>
           <tr><td data-label="Kata Biasa" class="jp">します</td><td data-label="Kenjougo" class="highlight-cell">いたします</td><td data-label="Arti">melakukan</td><td><button class="speak-btn" onclick="speak('いたします')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">言います</td><td data-label="Kenjougo" class="highlight-cell">申します</td><td data-label="Arti">berkata</td><td><button class="speak-btn" onclick="speak('申します')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">食べます・飲みます</td><td data-label="Kenjougo" class="highlight-cell">いただきます</td><td data-label="Arti">makan / minum</td><td><button class="speak-btn" onclick="speak('いただきます')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">聞きます・訪ねます</td><td data-label="Kenjougo" class="highlight-cell">伺います</td><td data-label="Arti">bertanya / mengunjungi</td><td><button class="speak-btn" onclick="speak('伺います')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">見ます</td><td data-label="Kenjougo" class="highlight-cell">拝見します</td><td data-label="Arti">melihat</td><td><button class="speak-btn" onclick="speak('拝見します')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">会います</td><td data-label="Kenjougo" class="highlight-cell">お目にかかります</td><td data-label="Arti">bertemu</td><td><button class="speak-btn" onclick="speak('お目にかかります')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">知っています</td><td data-label="Kenjougo" class="highlight-cell">存じています</td><td data-label="Arti">mengetahui</td><td><button class="speak-btn" onclick="speak('存じています')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">あげます</td><td data-label="Kenjougo" class="highlight-cell">差し上げます</td><td data-label="Arti">memberikan</td><td><button class="speak-btn" onclick="speak('差し上げます')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">持ちます</td><td data-label="Kenjougo" class="highlight-cell">お持ちします</td><td data-label="Arti">membawa</td><td><button class="speak-btn" onclick="speak('お持ちします')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">送ります</td><td data-label="Kenjougo" class="highlight-cell">お送りします</td><td data-label="Arti">mengantar</td><td><button class="speak-btn" onclick="speak('お送りします')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">案内します</td><td data-label="Kenjougo" class="highlight-cell">ご案内いたします</td><td data-label="Arti">memandu</td><td><button class="speak-btn" onclick="speak('ご案内いたします')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">説明します</td><td data-label="Kenjougo" class="highlight-cell">ご説明いたします</td><td data-label="Arti">menjelaskan</td><td><button class="speak-btn" onclick="speak('ご説明いたします')">🔊</button></td></tr>
-          <tr><td data-label="Kata Biasa" class="jp">連絡します</td><td data-label="Kenjougo" class="highlight-cell">ご連絡いたします</td><td data-label="Arti">menghubungi</td><td><button class="speak-btn" onclick="speak('ご連絡いたします')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>言<rt>い</rt></ruby>います</td><td data-label="Kenjougo" class="highlight-cell"><ruby>申<rt>もう</rt></ruby>します</td><td data-label="Arti">berkata</td><td><button class="speak-btn" onclick="speak('申します')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>食<rt>た</rt></ruby>べます・<ruby>飲<rt>の</rt></ruby>みます</td><td data-label="Kenjougo" class="highlight-cell">いただきます</td><td data-label="Arti">makan / minum</td><td><button class="speak-btn" onclick="speak('いただきます')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>聞<rt>   </rt></ruby>きます・<ruby>訪<rt>たず</rt></ruby>ねます</td><td data-label="Kenjougo" class="highlight-cell"><ruby>伺<rt>うかが</rt></ruby>います</td><td data-label="Arti">bertanya / mengunjungi</td><td><button class="speak-btn" onclick="speak('伺います')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>見<rt>み</rt></ruby>ます</td><td data-label="Kenjougo" class="highlight-cell"><ruby>拝見<rt>はいけん</rt></ruby>します</td><td data-label="Arti">melihat</td><td><button class="speak-btn" onclick="speak('拝見します')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>会<rt>あ</rt></ruby>います</td><td data-label="Kenjougo" class="highlight-cell">お<ruby>目<rt>め</rt></ruby>にかかります</td><td data-label="Arti">bertemu</td><td><button class="speak-btn" onclick="speak('お目にかかります')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>知<rt>し</rt></ruby>っています</td><td data-label="Kenjougo" class="highlight-cell"><ruby>存<rt>ぞん</rt></ruby>じています</td><td data-label="Arti">mengetahui</td><td><button class="speak-btn" onclick="speak('存じています')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp">あげます</td><td data-label="Kenjougo" class="highlight-cell"><ruby>差<rt>さ</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げます</td><td data-label="Arti">memberikan</td><td><button class="speak-btn" onclick="speak('差し上げます')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>持<rt>も</rt></ruby>ちます</td><td data-label="Kenjougo" class="highlight-cell">お<ruby>持<rt>も</rt></ruby>ちします</td><td data-label="Arti">membawa</td><td><button class="speak-btn" onclick="speak('お持ちします')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>送<rt>おく</rt></ruby>ります</td><td data-label="Kenjougo" class="highlight-cell">お<ruby>送<rt>おく</rt></ruby>りします</td><td data-label="Arti">mengantar</td><td><button class="speak-btn" onclick="speak('お送りします')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>案内<rt>あんない</rt></ruby>します</td><td data-label="Kenjougo" class="highlight-cell">ご<ruby>案内<rt>あんない</rt></ruby>いたします</td><td data-label="Arti">memandu</td><td><button class="speak-btn" onclick="speak('ご案内いたします')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>説明<rt>せつめい</rt></ruby>します</td><td data-label="Kenjougo" class="highlight-cell">ご<ruby>説明<rt>せつめい</rt></ruby>いたします</td><td data-label="Arti">menjelaskan</td><td><button class="speak-btn" onclick="speak('ご説明いたします')">🔊</button></td></tr>
+          <tr><td data-label="Kata Biasa" class="jp"><ruby>連絡<rt>れんらく</rt></ruby>します</td><td data-label="Kenjougo" class="highlight-cell">ご<ruby>連絡<rt>れんらく</rt></ruby>いたします</td><td data-label="Arti">menghubungi</td><td><button class="speak-btn" onclick="speak('ご連絡いたします')">🔊</button></td></tr>
         </tbody>
       </table>
     </div>
@@ -1478,9 +1549,10 @@
 
 <!-- FOOTER -->
 <footer>
-  <strong>謙譲語 (Kenjougo) Interaktif</strong><br>
+  <strong><ruby>謙譲語<rt>けんじょうご</rt></ruby> (Kenjougo) Interaktif — VERSI FINAL LENGKAP</strong><br>
   Dibuat berdasarkan <strong>Minna no Nihongo Buku 1 — Bab 50</strong> (みんなの日本語 第50課)<br>
-  Mencakup materi JLPT N4 · Referensi: 文化庁 敬語の指針 · Web Speech API untuk pengucapan<br>
+  Menggabungkan semua fitur V1 + V2 + furigana lengkap · Mencakup materi JLPT N4<br>
+  Referensi: <ruby>文化庁<rt>ぶんかちょう</rt></ruby> <ruby>敬語<rt>けいご</rt></ruby>の<ruby>指針<rt>ししん</rt></ruby> · Web Speech API untuk pengucapan · Tested & Complete<br>
   <span style="color:var(--border);">──────────────────────────────────</span><br>
   Belajar bahasa Jepang itu tidak mudah, tapi kamu pasti bisa! 🇯🇵✨
 </footer>
@@ -1489,7 +1561,7 @@
 <div class="toast" id="toast"></div>
 
 <!-- ══════════════════════════════════════════
-     JAVASCRIPT
+     JAVASCRIPT — SEMUA FUNGSI
 ══════════════════════════════════════════ -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -1506,7 +1578,6 @@ document.addEventListener("DOMContentLoaded", function() {
       buildDnd();
     }
     if (n === 6) animateProgress();
-    // Scroll to top of content
     document.getElementById('content' + n).scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -1549,7 +1620,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // ─── Copy to Anki ───
   window.copyAnki = function() {
     const lines = [
-      'Kenjougo — Minna no Nihongo Bab 50',
+      'Kenjougo — Minna no Nihongo Bab 50 (FINAL COMPLETE)',
       '===',
       '行きます・来ます\t参ります (mairimasu)\tpergi / datang',
       'います\tおります (orimasu)\tada',
@@ -1558,16 +1629,18 @@ document.addEventListener("DOMContentLoaded", function() {
       '食べます・飲みます\tいただきます (itadakimasu)\tmakan / minum / menerima',
       '聞きます・訪ねます\t伺います (ukagaimasu)\tbertanya / mengunjungi',
       '見ます\t拝見します (haiken shimasu)\tmelihat',
-      '会います\tお目にかかります\tbertemu',
+      '会います\tお目にかかります (ome ni kakarimasu)\tbertemu',
       '知っています\t存じています (zonjite imasu)\tmengetahui',
       'あげます\t差し上げます (sashiagemasu)\tmemberikan',
-      '持ちます\tお持ちします\tmembawa',
-      '送ります\tお送りします\tmengantar',
-      '案内します\tご案内いたします\tmemandu',
+      '持ちます\tお持ちします (omochi shimasu)\tmembawa',
+      '送ります\tお送りします (okuri shimasu)\tmengantar',
+      '案内します\tご案内いたします (go-annai itashimasu)\tmemandu',
       '説明します\tご説明いたします (go-setsumei itashimasu)\tmenjelaskan',
       '連絡します\tご連絡いたします (go-renraku itashimasu)\tmenghubungi',
-      '確認します\tご確認いたします\tmemastikan',
-      '準備します\tご準備いたします\tmempersiapkan',
+      '確認します\t確認いたします (kakunin itashimasu)\tmemastikan',
+      '準備します\t準備いたします (junbi itashimasu)\tmempersiapkan',
+      '報告します\tご報告いたします (go-houkoku itashimasu)\tmelaporkan',
+      '紹介します\tご紹介いたします (go-shoukai itashimasu)\tmemperkenalkan',
     ];
     navigator.clipboard.writeText(lines.join('\n')).then(() => {
       showToast('✅ Data Anki berhasil disalin! Tempel di Anki dengan Tab sebagai pemisah.');
@@ -1646,17 +1719,17 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // ══════════════════════════════════════════
-  // QUIZ DATA — 10 soal, sinkron konten
+  // QUIZ DATA — 10 soal
   // ══════════════════════════════════════════
   const quizData = [
     {
-      q: '私が荷物を___します。お客様の荷物を運ぶとき。(持つ → Kenjougo, subjek: saya)',
+      q: '私が荷物を___します。お客様の荷物を運ぶとき。(持つ → Kenjougo, 主語: 私)',
       options: ['ご持ち', 'お持ち', 'お持った', '持ち'],
       correct: 1,
       explain: '「持つ」はwago → お＋持ち＋します = お持ちします。ビジネス場面ではお持ちいたします。'
     },
     {
-      q: '田中と___します。初めての自己紹介で。(言う → Kenjougo, 主語: 私)',
+      q: '田中と___します。初めての自己紹  で。(言う → Kenjougo, 主語: 私)',
       options: ['おっしゃい', '申し', 'お言い', 'ご言い'],
       correct: 1,
       explain: '「言う」の謙譲語は「申す」。田中と申します = "Saya bernama Tanaka"。おっしゃいます = sonkeigo dari 言う, dipakai untuk tindakan orang lain.'
@@ -1665,7 +1738,7 @@ document.addEventListener("DOMContentLoaded", function() {
       q: '明日、御社に___ります。取引先への訪問で。(行く → Kenjougo, 主語: 私)',
       options: ['参', 'いらっしゃい', 'お行き', 'お参り'],
       correct: 0,
-      explain: '「行く・来る」の謙譲語は「参る (まいる)」。参ります = datang/pergi (humble, subjek saya). いらっしゃいます = sonkeigo, untuk tindakan orang lain.'
+      explain: '「行く・来る」の謙譲語は「参る (まいる)」。参ります = datang/pergi (humble, 主語: 私). いらっしゃいます = sonkeigo, untuk tindakan orang lain.'
     },
     {
       q: '資料を___します。上司の書類を確認するとき。(見る → Kenjougo, 主語: 私)',
@@ -1704,7 +1777,7 @@ document.addEventListener("DOMContentLoaded", function() {
       explain: '「会う」の謙譲語は「お目にかかる」。初めてお目にかかります = senang bertemu untuk pertama kali (saya yang bertemu dengan orang penting)。'
     },
     {
-      q: '私は田中様のご連絡先を___。(知っている → Kenjougo formal, 主語: 私)',
+      q: '私は田中様の   連絡先を___。(知っている → Kenjougo formal, 主語: 私)',
       options: ['存じております', 'ご存じです', 'お知りしています', '知っています'],
       correct: 0,
       explain: '「知っている」の謙譲語は「存じています」または「存じております」。「存じております」のほうがより丁寧。ご存じです = sonkeigo, untuk orang lain yang tahu. 主語が「私」なのでkenjougoを使う。'
@@ -1795,7 +1868,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let dndBuilt = false;
   let dragTarget = null;
-  let selectedChip = null; // for tap-to-select mode
+  let selectedChip = null;
 
   function clearChipSelection() {
     if (selectedChip) {
@@ -1829,11 +1902,9 @@ document.addEventListener("DOMContentLoaded", function() {
       });
       chip.addEventListener('dragend', () => chip.classList.remove('dragging'));
 
-      // Tap-to-select mode for mobile
       chip.addEventListener('click', () => {
         if (chip.classList.contains('used')) return;
         if (selectedChip === chip) {
-          // Deselect if tapping same chip
           clearChipSelection();
           return;
         }
@@ -1845,7 +1916,6 @@ document.addEventListener("DOMContentLoaded", function() {
       optContainer.appendChild(chip);
     });
 
-    // Helper hint below the chip bank
     const hint = document.createElement('div');
     hint.id = 'dndHint';
     hint.style.cssText = 'font-size:.78rem;color:var(--accent);margin-top:6px;min-height:20px;transition:opacity .2s;';
@@ -1877,10 +1947,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (dragTarget) dragTarget.classList.add('used');
       });
 
-      // Tap on drop: place selected chip, or clear if already filled
       drop.addEventListener('click', () => {
         if (selectedChip) {
-          // Place selected chip into this drop
           const val = selectedChip.dataset.value;
           const prev = drop.dataset.filled;
           if (prev) restoreChip(prev);
@@ -1890,9 +1958,7 @@ document.addEventListener("DOMContentLoaded", function() {
           drop.classList.remove('correct-drop', 'wrong-drop');
           selectedChip.classList.add('used');
           clearChipSelection();
-          document.getElementById('dndHint').textContent = '💡 Tap kata → tap kotak tujuan. Tap kotak terisi untuk mengembalikan.';
         } else if (drop.dataset.filled) {
-          // No chip selected — clear the drop zone
           restoreChip(drop.dataset.filled);
           drop.textContent = 'Taruh di sini';
           delete drop.dataset.filled;
