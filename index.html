@@ -503,6 +503,10 @@
     .dnd-chip:hover { background: rgba(56,189,248,.15); transform: translateY(-2px); }
     .dnd-chip.used { opacity: .3; cursor: default; pointer-events: none; }
     .dnd-chip.dragging { opacity: .5; transform: scale(.95); }
+    .dnd-chip.selected {
+      border-color: var(--gold); background: rgba(251,191,36,.18); color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(251,191,36,.3); transform: scale(1.07); cursor: pointer;
+    }
 
     .dnd-check-btn {
       margin-top: 14px; padding: 10px 24px; border-radius: 12px; font-size: .86rem; font-weight: 700;
@@ -1791,6 +1795,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let dndBuilt = false;
   let dragTarget = null;
+  let selectedChip = null; // for tap-to-select mode
+
+  function clearChipSelection() {
+    if (selectedChip) {
+      selectedChip.classList.remove('selected');
+      selectedChip = null;
+    }
+  }
 
   function buildDnd() {
     if (dndBuilt) return;
@@ -1813,25 +1825,32 @@ document.addEventListener("DOMContentLoaded", function() {
         dragTarget = chip;
         chip.classList.add('dragging');
         e.dataTransfer.setData('text/plain', ans);
+        clearChipSelection();
       });
       chip.addEventListener('dragend', () => chip.classList.remove('dragging'));
 
-      // Click-to-fill for mobile
+      // Tap-to-select mode for mobile
       chip.addEventListener('click', () => {
         if (chip.classList.contains('used')) return;
-        const emptyDrop = document.querySelector('.dnd-drop:not(.filled)');
-        if (emptyDrop) {
-          const prev = emptyDrop.dataset.filled;
-          if (prev) restoreChip(prev);
-          emptyDrop.textContent = ans;
-          emptyDrop.dataset.filled = ans;
-          emptyDrop.classList.add('filled');
-          chip.classList.add('used');
+        if (selectedChip === chip) {
+          // Deselect if tapping same chip
+          clearChipSelection();
+          return;
         }
+        clearChipSelection();
+        selectedChip = chip;
+        chip.classList.add('selected');
       });
 
       optContainer.appendChild(chip);
     });
+
+    // Helper hint below the chip bank
+    const hint = document.createElement('div');
+    hint.id = 'dndHint';
+    hint.style.cssText = 'font-size:.78rem;color:var(--accent);margin-top:6px;min-height:20px;transition:opacity .2s;';
+    hint.textContent = '💡 Tap kata → tap kotak tujuan. Tap kotak terisi untuk mengembalikan.';
+    optContainer.parentNode.insertBefore(hint, optContainer.nextSibling);
 
     dndData.forEach((item, i) => {
       const row = document.createElement('div');
@@ -1858,9 +1877,22 @@ document.addEventListener("DOMContentLoaded", function() {
         if (dragTarget) dragTarget.classList.add('used');
       });
 
-      // Click on drop to clear
+      // Tap on drop: place selected chip, or clear if already filled
       drop.addEventListener('click', () => {
-        if (drop.dataset.filled) {
+        if (selectedChip) {
+          // Place selected chip into this drop
+          const val = selectedChip.dataset.value;
+          const prev = drop.dataset.filled;
+          if (prev) restoreChip(prev);
+          drop.textContent = val;
+          drop.dataset.filled = val;
+          drop.classList.add('filled');
+          drop.classList.remove('correct-drop', 'wrong-drop');
+          selectedChip.classList.add('used');
+          clearChipSelection();
+          document.getElementById('dndHint').textContent = '💡 Tap kata → tap kotak tujuan. Tap kotak terisi untuk mengembalikan.';
+        } else if (drop.dataset.filled) {
+          // No chip selected — clear the drop zone
           restoreChip(drop.dataset.filled);
           drop.textContent = 'Taruh di sini';
           delete drop.dataset.filled;
