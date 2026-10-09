@@ -424,6 +424,78 @@
       .quiz-q { font-size: 1.2rem; }
     }
 
+    /* ══════════════════════════════════════════
+       PENYEMPURNAAN MOBILE (hanya tambahan, tidak mengubah aturan di atas)
+    ══════════════════════════════════════════ */
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    img, svg, video { max-width: 100%; height: auto; }
+    button, .tab-btn, .quiz-opt, .demo-btn, .btn-sm, .btn-outline { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+    @media (max-width: 900px) {
+      /* aman dari notch / area lengkung saat layar landscape */
+      .topbar { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+      .wrap { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); padding-bottom: max(96px, calc(env(safe-area-inset-bottom) + 48px)); }
+      .tabs {
+        margin-left: calc(-1 * max(24px, env(safe-area-inset-left)));
+        margin-right: calc(-1 * max(24px, env(safe-area-inset-right)));
+        padding-left: max(24px, env(safe-area-inset-left));
+        padding-right: max(24px, env(safe-area-inset-right));
+        overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch;
+      }
+      /* target sentuh minimal 44px */
+      .tab-btn { min-height: 48px; }
+      .btn-sm { min-height: 44px; padding-left: 16px; padding-right: 16px; }
+      .btn-outline { min-height: 44px; }
+      /* teks panjang tidak memicu scroll horizontal */
+      .hero-desc, .sec-desc, .box, .formula, .itadake-formula, .itadake-row, .ex-item, .quiz-q, .quiz-feedback, .usage-note, .demo-note {
+        overflow-wrap: anywhere;
+      }
+      .tbl-wrap { -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar { padding-left: max(18px, env(safe-area-inset-left)); padding-right: max(18px, env(safe-area-inset-right)); }
+      .wrap { padding-left: max(18px, env(safe-area-inset-left)); padding-right: max(18px, env(safe-area-inset-right)); padding-bottom: max(72px, calc(env(safe-area-inset-bottom) + 48px)); }
+      .tabs {
+        margin-left: calc(-1 * max(18px, env(safe-area-inset-left)));
+        margin-right: calc(-1 * max(18px, env(safe-area-inset-right)));
+        padding-left: max(18px, env(safe-area-inset-left));
+        padding-right: max(18px, env(safe-area-inset-right));
+      }
+      .hero { gap: 28px; padding: 32px 0 36px; }
+      .hero-kanji { font-size: clamp(4rem, 22vw, 6.5rem); }
+      .demo-btn { width: 100%; }
+      .quiz-header { flex-wrap: wrap; gap: 10px; }
+      .quiz-options { flex-direction: column; }
+      .quiz-opt { width: 100%; max-width: 100%; text-align: left; }
+      .box-blue { font-size: 1rem; }
+      .box-note { padding-right: 16px; }
+      .vocab-card-kenjo { font-size: 1.5rem; }
+      .tbl-wrap td { grid-template-columns: 6.2rem minmax(0, 1fr); }
+    }
+
+    @media (max-width: 380px) {
+      .topbar-brand span { display: none; }
+      .badge { font-size: .78rem; }
+      .quiz-card { padding: 18px 14px 20px; }
+    }
+
+    /* hilangkan efek hover yang "menempel" di layar sentuh */
+    @media (hover: none) {
+      .btn-sm:hover { border-color: var(--line); color: var(--ink); }
+      .btn-outline:hover { border-color: var(--line); color: var(--ink); }
+      .demo-btn:hover { background: var(--ai); }
+      .tab-btn:hover { color: var(--muted); }
+      .tab-btn.active:hover { color: var(--ink); }
+      .quiz-opt:hover:not(:disabled) { border-color: var(--line); }
+    }
+
+    /* Furigana Level 3 */
+    #content3 .vocab-card-jp { line-height: 2.1; }
+    #content3 .vocab-card-kenjo { line-height: 1.9; }
+    #content3 .vocab-card-meaning { line-height: 1.9; }
+    #content3 ruby rt { font-size: .5em; font-weight: 500; letter-spacing: .02em; }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
     }
@@ -671,9 +743,9 @@
         <div class="card-grid">
           <div class="vocab-card">
             <div class="vocab-card-label">Pergi / datang</div>
-            <div class="vocab-card-jp">行きます・来ます</div>
+            <div class="vocab-card-jp"><ruby>行<rt>い</rt></ruby>きます・<ruby>来<rt>き</rt></ruby>ます</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">参ります</div>
+            <div class="vocab-card-kenjo"><ruby>参<rt>まい</rt></ruby>ります</div>
             <div class="vocab-card-meaning">Sangat umum dipakai di kantor & toko</div>
           </div>
           <div class="vocab-card">
@@ -692,14 +764,14 @@
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Berkata</div>
-            <div class="vocab-card-jp">言います</div>
+            <div class="vocab-card-jp"><ruby>言<rt>い</rt></ruby>います</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">申します</div>
+            <div class="vocab-card-kenjo"><ruby>申<rt>もう</rt></ruby>します</div>
             <div class="vocab-card-meaning">Sering untuk perkenalan diri</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Makan / minum</div>
-            <div class="vocab-card-jp">食べます・飲みます</div>
+            <div class="vocab-card-jp"><ruby>食<rt>た</rt></ruby>べます・<ruby>飲<rt>の</rt></ruby>みます</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
             <div class="vocab-card-kenjo">いただきます</div>
             <div class="vocab-card-meaning">Juga untuk menerima dari atasan</div>
@@ -713,66 +785,66 @@
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Mengunjungi / bertanya</div>
-            <div class="vocab-card-jp">聞きます・訪ねます</div>
+            <div class="vocab-card-jp"><ruby>聞<rt>き</rt></ruby>きます・<ruby>訪<rt>たず</rt></ruby>ねます</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">伺います</div>
+            <div class="vocab-card-kenjo"><ruby>伺<rt>うかが</rt></ruby>います</div>
             <div class="vocab-card-meaning">Satu kata, banyak arti (serbaguna)</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Melihat</div>
-            <div class="vocab-card-jp">見ます</div>
+            <div class="vocab-card-jp"><ruby>見<rt>み</rt></ruby>ます</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">拝見します</div>
+            <div class="vocab-card-kenjo"><ruby>拝見<rt>はいけん</rt></ruby>します</div>
             <div class="vocab-card-meaning">Melihat dokumen atasan</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Bertemu</div>
-            <div class="vocab-card-jp">会います</div>
+            <div class="vocab-card-jp"><ruby>会<rt>あ</rt></ruby>います</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">お目にかかります</div>
+            <div class="vocab-card-kenjo">お<ruby>目<rt>め</rt></ruby>にかかります</div>
             <div class="vocab-card-meaning">Sangat formal (pertemuan pertama)</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Mengetahui</div>
-            <div class="vocab-card-jp">知っています</div>
+            <div class="vocab-card-jp"><ruby>知<rt>し</rt></ruby>っています</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">存じています</div>
-            <div class="vocab-card-meaning">Versi humble dari 知る</div>
+            <div class="vocab-card-kenjo"><ruby>存<rt>ぞん</rt></ruby>じています</div>
+            <div class="vocab-card-meaning">Versi humble dari <ruby>知<rt>し</rt></ruby>る</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Memberikan</div>
             <div class="vocab-card-jp">あげます</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">差し上げます</div>
+            <div class="vocab-card-kenjo"><ruby>差<rt>さ</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げます</div>
             <div class="vocab-card-meaning">Memberi sesuatu ke atasan</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Memperlihatkan</div>
-            <div class="vocab-card-jp">見せます</div>
+            <div class="vocab-card-jp"><ruby>見<rt>み</rt></ruby>せます</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">お目にかけます</div>
-            <div class="vocab-card-meaning">Atau ご覧に入れます</div>
+            <div class="vocab-card-kenjo">お<ruby>目<rt>め</rt></ruby>にかけます</div>
+            <div class="vocab-card-meaning">Atau ご<ruby>覧<rt>らん</rt></ruby>に<ruby>入<rt>い</rt></ruby>れます</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Meminjam</div>
-            <div class="vocab-card-jp">借ります</div>
+            <div class="vocab-card-jp"><ruby>借<rt>か</rt></ruby>ります</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">拝借します</div>
+            <div class="vocab-card-kenjo"><ruby>拝借<rt>はいしゃく</rt></ruby>します</div>
             <div class="vocab-card-meaning">Meminjam barang dari atasan</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Mengerti</div>
             <div class="vocab-card-jp">わかります</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">承知します</div>
+            <div class="vocab-card-kenjo"><ruby>承知<rt>しょうち</rt></ruby>します</div>
             <div class="vocab-card-meaning">Atau かしこまりました</div>
           </div>
           <div class="vocab-card">
             <div class="vocab-card-label">Berpikir / Mengira</div>
-            <div class="vocab-card-jp">思います</div>
+            <div class="vocab-card-jp"><ruby>思<rt>おも</rt></ruby>います</div>
             <div class="vocab-card-arrow" aria-hidden="true">↓</div>
-            <div class="vocab-card-kenjo">存じます</div>
-            <div class="vocab-card-meaning">Versi humble dari 思う</div>
+            <div class="vocab-card-kenjo"><ruby>存<rt>ぞん</rt></ruby>じます</div>
+            <div class="vocab-card-meaning">Versi humble dari <ruby>思<rt>おも</rt></ruby>う</div>
           </div>
         </div>
       </div>
